@@ -33,25 +33,28 @@ class HorizontalLoginForm extends React.Component {
     return (
       <Form layout="inline" onSubmit={this.handleSubmit}>
         <Form.Item validateStatus={telphoneError ? 'error' : ''} help={telphoneError || ''}>
-          {getFieldDecorator('telphone', {
+          {/* {getFieldDecorator('telphone', {
             rules: [{ required: true, message: 'Please input your telphone!' }],
           })(
             <Input
               prefix={<Icon type="telphone" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="telphone"
             />,
-          )}
+          )} */}
+          <input id="telphone"></input>
         </Form.Item>
         <Form.Item validateStatus={passwordError ? 'error' : ''} help={passwordError || ''}>
-          {getFieldDecorator('password', {
+          {/* {getFieldDecorator('password', {
             rules: [{ required: true, message: 'Please input your Password!' }],
           })(
             <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
               type="password"
               placeholder="Password"
+              id="passworld"
             />,
-          )}
+          )} */}
+          <input id="password"></input>
         </Form.Item>
         <Form.Item>
           <button id="login">submit</button>

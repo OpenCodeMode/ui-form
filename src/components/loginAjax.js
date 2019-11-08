@@ -4,13 +4,15 @@ import jQuery from 'jquery'
 jQuery(document).ready(function(){
 
     $("#register").on("click",function(){
-        console.log(123456)
-        window.location.href = "http://localhost:3000/";
+        window.location.href = "www.baidu.com";
     });
 //登陆请求
+
 $("#login").on("click",function(){
     // 判空处理
      var telphone =  $("#telphone").val();
+     console.log($('#telphone'))
+
      if (telphone == null || telphone == "") {
          alert("手机号不能为空");
          return false;

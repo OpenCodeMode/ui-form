@@ -19,7 +19,7 @@ class NormalLoginForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
         <Form.Item className="content">
-          <input id = "telphone"refix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          <input id = "telphone" refix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Cell-phone number" />
           {/*getFieldDecorator('Cell-phone number', {
           })(

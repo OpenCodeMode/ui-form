@@ -106,9 +106,9 @@ class RegistrationForm extends React.Component {
 
     return (
       <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-      <div id = "name">
+      {/* <div id = "name"> */}
         <Form.Item label="Name">
-          {getFieldDecorator('name', {
+          {/* {getFieldDecorator('name', {
             rules: [
               {
                 type: 'name',
@@ -119,11 +119,12 @@ class RegistrationForm extends React.Component {
                 message: 'Please input your name!',
               },
             ],
-          })(<Input id="name" />)}
+          })(<Input id="name" />)} */}
+          <input id="name"></input>
         </Form.Item>
-        </div>
+        {/* </div> */}
         <Form.Item label="Password" hasFeedback>
-          {getFieldDecorator('password', {
+          {/* {getFieldDecorator('password', {
             rules: [
               {
                 required: true,
@@ -133,10 +134,11 @@ class RegistrationForm extends React.Component {
                 validator: this.validateToNextPassword,
               },
             ],
-          })(<Input.Password id="password" />)}
+          })(<Input.Password id="password" />)} */}
+          <input id="password"></input>
         </Form.Item>
-        <Form.Item label="Confirm Password" hasFeedback>
-          {getFieldDecorator('confirm', {
+        {/* <Form.Item label="Confirm Password" hasFeedback> */}
+          {/* {getFieldDecorator('confirm', {
             rules: [
               {
                 required: true,
@@ -146,8 +148,8 @@ class RegistrationForm extends React.Component {
                 validator: this.compareToFirstPassword,
               },
             ],
-          })(<Input.Password onBlur={this.handleConfirmBlur} id="password" />)}
-        </Form.Item>
+          })(<Input.Password onBlur={this.handleConfirmBlur} id="password" />)} */}
+        {/* </Form.Item> */}
         <Form.Item
           label={
             <span>
@@ -155,9 +157,10 @@ class RegistrationForm extends React.Component {
             </span>
           }
         >
-          {getFieldDecorator('gender', {
+          {/* {getFieldDecorator('gender', {
             rules: [{ required: true, message: 'Please input your gender!', whitespace: true }],
-          })(<Input id="gender"  />)}
+          })(<Input id="gender"  />)} */}
+          <input id="gender"></input>
         </Form.Item>
 
         <Form.Item
@@ -170,23 +173,26 @@ class RegistrationForm extends React.Component {
             </span>
           }
         >
-          {getFieldDecorator('age', {
+          {/* {getFieldDecorator('age', {
             rules: [{ required: true, message: 'Please input your age!', whitespace: true }],
-          })(<Input id="age"  />)}
+          })(<Input id="age"  />)} */}
+          <input id='age'></input>
         </Form.Item>
        
         <Form.Item label="Phone Number">
-          {getFieldDecorator('phone', {
+          {/* {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
-          })(<Input id="telphone" addonBefore={prefixSelector} style={{ width: '100%' }} />)}
+          })(<Input id="telphone" addonBefore={prefixSelector} style={{ width: '100%' }} />)} */}
+          <input id='telphone'></input>
         </Form.Item>
 
         <Form.Item label="Verification Code" extra="We must make sure that your are a Verification Code.">
           <Row gutter={8}>
             <Col span={12}>
-              {getFieldDecorator('Verification Code', {
+              {/* {getFieldDecorator('Verification Code', {
                 rules: [{ required: true, message: 'Please input the captcha you got!' }],
-              })(<Input id="otpCode" />)}
+              })(<Input id="otpCode" />)} */}
+              <input id="otpCode"></input>
             </Col>
             <Col span={12}>
             </Col>

@@ -4,7 +4,7 @@ import jQuery from 'jquery'
 jQuery(document).ready(function(){
 
     $("#register").on("click",function(){
-        window.location.href = "www.baidu.com";
+        // window.location.href = "www.baidu.com";
     });
 //登陆请求
 

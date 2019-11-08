@@ -54,12 +54,8 @@ class HorizontalLoginForm extends React.Component {
           )}
         </Form.Item>
         <Form.Item>
-          <Button id="login" type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
-            Log in
-          </Button>
-          <Button id="register" type="primary" htmlType="register " disabled={hasErrors(getFieldsError())}>
-            Register
-          </Button>
+          <button id="login">submit</button>
+          <button id="register">register</button>
         </Form.Item>
       </Form>
     );
@@ -68,5 +64,6 @@ class HorizontalLoginForm extends React.Component {
 
 const WrappedHorizontalLoginForm = Form.create({ name: 'horizontal_login' })(HorizontalLoginForm);
 
-ReactDOM.render(<WrappedHorizontalLoginForm />, document.getElementById('container'));
+// ReactDOM.render(<WrappedHorizontalLoginForm />, document.getElementById('container'));
+export default WrappedHorizontalLoginForm;
           

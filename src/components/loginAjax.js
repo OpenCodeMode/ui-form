@@ -1,10 +1,11 @@
-import $ from  'jquery'
+    import $ from  'jquery'
 import jQuery from 'jquery' 
 
 jQuery(document).ready(function(){
 
-    $("register").on("click",function(){
-        window.location.href = "Home.js";
+    $("#register").on("click",function(){
+        console.log(123456)
+        window.location.href = "http://localhost:3000/";
     });
 //登陆请求
 $("#login").on("click",function(){

@@ -9,19 +9,21 @@ import {
 } from 'react-router-dom'
 import Home from './components/Home'
 import Cinema from './components/Cinema'
+import login from './components/login'
 
 const App = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">影片</Link></li>
-        <li><Link to="/cinema">影院</Link></li>
+        {/* <li><Link to="/">影片</Link></li>
+        <li><Link to="/cinema">影院</Link></li> */}
       </ul>
 
       <hr/>
 
       <Route exact path="/" component={Home}/>
       <Route path="/cinema" component={Cinema}/>
+      <Route path="/login" component={login}/>
     </div>
   </Router>
 )

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
+import './register.js';
 import {
   Form,
   Input,
@@ -17,42 +18,6 @@ import {
 
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
-
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
-
 class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
@@ -141,20 +106,22 @@ class RegistrationForm extends React.Component {
 
     return (
       <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-        <Form.Item label="E-mail">
-          {getFieldDecorator('email', {
+      <div id = "name">
+        <Form.Item label="Name">
+          {getFieldDecorator('name', {
             rules: [
               {
-                type: 'email',
-                message: 'The input is not valid E-mail!',
+                type: 'name',
+                message: 'The input is not valid name!',
               },
               {
                 required: true,
-                message: 'Please input your E-mail!',
+                message: 'Please input your name!',
               },
             ],
-          })(<Input />)}
+          })(<Input id="name" />)}
         </Form.Item>
+        </div>
         <Form.Item label="Password" hasFeedback>
           {getFieldDecorator('password', {
             rules: [
@@ -166,7 +133,7 @@ class RegistrationForm extends React.Component {
                 validator: this.validateToNextPassword,
               },
             ],
-          })(<Input.Password />)}
+          })(<Input.Password id="password" />)}
         </Form.Item>
         <Form.Item label="Confirm Password" hasFeedback>
           {getFieldDecorator('confirm', {
@@ -179,60 +146,53 @@ class RegistrationForm extends React.Component {
                 validator: this.compareToFirstPassword,
               },
             ],
-          })(<Input.Password onBlur={this.handleConfirmBlur} />)}
+          })(<Input.Password onBlur={this.handleConfirmBlur} id="password" />)}
         </Form.Item>
         <Form.Item
           label={
             <span>
-              Nickname&nbsp;
-              <Tooltip title="What do you want others to call you?">
+              Gender
+            </span>
+          }
+        >
+          {getFieldDecorator('gender', {
+            rules: [{ required: true, message: 'Please input your gender!', whitespace: true }],
+          })(<Input id="gender"  />)}
+        </Form.Item>
+
+        <Form.Item
+          label={
+            <span>
+              Age&nbsp;
+              <Tooltip  title="What is your age ?">
                 <Icon type="question-circle-o" />
               </Tooltip>
             </span>
           }
         >
-          {getFieldDecorator('nickname', {
-            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
-          })(<Input />)}
+          {getFieldDecorator('age', {
+            rules: [{ required: true, message: 'Please input your age!', whitespace: true }],
+          })(<Input id="age"  />)}
         </Form.Item>
-        <Form.Item label="Habitual Residence">
-          {getFieldDecorator('residence', {
-            initialValue: ['zhejiang', 'hangzhou', 'xihu'],
-            rules: [
-              { type: 'array', required: true, message: 'Please select your habitual residence!' },
-            ],
-          })(<Cascader options={residences} />)}
-        </Form.Item>
+       
         <Form.Item label="Phone Number">
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: 'Please input your phone number!' }],
-          })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
+          })(<Input id="telphone" addonBefore={prefixSelector} style={{ width: '100%' }} />)}
         </Form.Item>
-        <Form.Item label="Website">
-          {getFieldDecorator('website', {
-            rules: [{ required: true, message: 'Please input website!' }],
-          })(
-            <AutoComplete
-              dataSource={websiteOptions}
-              onChange={this.handleWebsiteChange}
-              placeholder="website"
-            >
-              <Input />
-            </AutoComplete>,
-          )}
-        </Form.Item>
-        <Form.Item label="Captcha" extra="We must make sure that your are a human.">
+
+        <Form.Item label="Verification Code" extra="We must make sure that your are a Verification Code.">
           <Row gutter={8}>
             <Col span={12}>
-              {getFieldDecorator('captcha', {
+              {getFieldDecorator('Verification Code', {
                 rules: [{ required: true, message: 'Please input the captcha you got!' }],
-              })(<Input />)}
+              })(<Input id="otpCode" />)}
             </Col>
             <Col span={12}>
-              <Button>Get captcha</Button>
             </Col>
           </Row>
         </Form.Item>
+
         <Form.Item {...tailFormItemLayout}>
           {getFieldDecorator('agreement', {
             valuePropName: 'checked',
@@ -243,8 +203,9 @@ class RegistrationForm extends React.Component {
           )}
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            Register
+
+          <Button id="register"  type="primary" htmlType="submit">
+          Save and submit
           </Button>
         </Form.Item>
       </Form>
@@ -252,5 +213,5 @@ class RegistrationForm extends React.Component {
   }
 }
 
-const WrappedRegistrationForm = Form.create({ name: 'register' })(RegistrationForm);
+const WrappedRegistrationForm = Form.create({ name: 'Save and submit' })(RegistrationForm);
 export default WrappedRegistrationForm;
